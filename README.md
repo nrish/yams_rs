@@ -2,11 +2,12 @@ just a simple math solver/parser written in rust.
 
 general design structure
 
-- two base nodes, functions and operators
-- functions are themselves their own statements, and are parsed separately.
+- Nodes are things which need resolving (functions, variables), or operators which contain more nodes.
 
 steps in parsing
 
-- read statement string into tree
-- divide statement by order of operations into first and second parts
+- validate parenthesis
+- divide statement by order of operations into left and right parts, respecting parenthesis
 - keep dividing until no more operators are left
+
+currently just sets up the tree, would be really simple to implement evaluation though.
